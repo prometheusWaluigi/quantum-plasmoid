@@ -1,0 +1,13 @@
+torch
+git+https://github.com/zknus/torchfde.git
+git+https://github.com/prmiles/pyfod.git
+qutip
+stochastic
+neurodiffeq
+numpy
+scipy
+matplotlib
+pandas
+scikit-learn
+scikit-learn-intelex
+jupyter
