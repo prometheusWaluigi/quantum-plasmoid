@@ -1,13 +1,54 @@
-torch
-git+https://github.com/zknus/torchfde.git
-git+https://github.com/prmiles/pyfod.git
-qutip
-stochastic
-neurodiffeq
-numpy
-scipy
-matplotlib
-pandas
-scikit-learn
-scikit-learn-intelex
-jupyter
+# Core scientific packages
+numpy>=1.24.0
+scipy>=1.10.0
+pandas>=2.0.0
+matplotlib>=3.6.0
+sympy>=1.12.0  # Symbolic mathematics
+
+# Machine learning and deep learning
+scikit-learn>=1.2.0
+scikit-learn-intelex>=2023.0.0
+torch>=2.0.0
+tensorflow>=2.12.0  # Optional for neural network implementations
+
+# Quantum computing
+qutip>=4.7.0  # Quantum Toolbox in Python
+pennylane>=0.30.0  # Quantum machine learning
+
+# Differential equations and stochastic processes
+neurodiffeq>=0.2.2  # Neural network solvers for differential equations
+stochastic>=0.6.0  # Stochastic process simulation
+
+# Fractional calculus packages
+git+https://github.com/zknus/torchfde.git  # Fractional differential equations with PyTorch
+git+https://github.com/prmiles/pyfod.git  # Python Fractional Order Derivatives
+git+https://github.com/Danilosouza9612/pyfractionalcalculus.git  # Additional fractional calculus tools
+
+# Topological data analysis
+ripser>=0.6.0  # Persistent homology computation
+persim>=0.3.1  # Persistence images and diagram tools
+gudhi>=3.7.0  # More comprehensive TDA tools
+
+# Complex systems and network analysis
+networkx>=3.0  # Network analysis
+pyunicorn>=0.6.1  # Unified complex network and recurrence analysis
+
+# Riemannian geometry and manifold learning
+pymanopt>=2.0.0  # Optimization on manifolds
+geomstats>=2.5.0  # Computational differential geometry
+
+# Visualization
+plotly>=5.14.0  # Interactive visualizations
+pyvista>=0.38.0  # 3D visualization
+seaborn>=0.12.0  # Statistical data visualization
+
+# Spectral analysis and signal processing
+spectrum>=1.0.0  # Spectral analysis
+pywavelets>=1.4.0  # Wavelet transforms
+mne>=1.3.0  # Analysis of neurophysiological data (EEG, MEG)
+
+# Development and visualization
+jupyter>=1.0.0  # Jupyter notebook
+ipykernel>=6.21.0  # IPython kernel
+ipywidgets>=8.0.0  # Interactive widgets for Jupyter
+tqdm>=4.65.0  # Progress bars
