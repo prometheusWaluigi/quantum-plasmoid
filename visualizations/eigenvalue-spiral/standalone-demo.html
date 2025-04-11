@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>φ-Prime Resonance: Radial Eigenvalue Theorem</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background-color: #1a202c;
+      color: #e2e8f0;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: 800px;
+      width: 100%;
+    }
+    
+    h1 {
+      color: #d6bcfa;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    
+    h2 {
+      color: #fbd38d;
+      text-align: center;
+      font-style: italic;
+      font-weight: normal;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    
+    .visualization-container {
+      border: 1px solid #4a5568;
+      border-radius: 12px;
+      padding: 20px;
+      background-color: #2d3748;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .control-label {
+      color: #d6bcfa;
+      margin-bottom: 5px;
+    }
+    
+    .control-value {
+      color: #fbd38d;
+      margin-top: 5px;
+    }
+    
+    input[type="range"] {
+      width: 150px;
+    }
+    
+    input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+    }
+    
+    button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      background-color: #6b46c1;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    button:hover {
+      background-color: #805ad5;
+    }
+    
+    button.active {
+      background-color: #ed8936;
+    }
+    
+    .pattern-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    
+    .description {
+      font-size: 14px;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .description p {
+      margin-bottom: 10px;
+    }
+    
+    .description p:last-child {
+      color: #d6bcfa;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>φ-Prime Resonance: Radial Eigenvalue Theorem</h1>
+    <h2>Fractal KPZ with χ (fKPZχ) Consciousness Framework</h2>
+    
+    <div class="visualization-container">
+      <svg id="visualization" width="600" height="600"></svg>
+    </div>
+    
+    <div class="controls">
+      <div class="control-group">
+        <span class="control-label">Prime Count</span>
+        <input type="range" id="prime-count" min="5" max="50" value="25">
+        <span class="control-value" id="prime-count-value">25</span>
+      </div>
+      
+      <div class="control-group">
+        <span class="control-label">Animation Speed</span>
+        <input type="range" id="animation-speed" min="0" max="2" step="0.1" value="0.5">
+        <span class="control-value" id="animation-speed-value">0.5x</span>
+      </div>
+      
+      <div class="control-group">
+        <span class="control-label">Show Labels</span>
+        <input type="checkbox" id="show-labels" checked>
+      </div>
+      
+      <div class="control-group">
+        <span class="control-label">Animation</span>
+        <button id="animation-toggle">Pause</button>
+      </div>
+    </div>
+    
+    <div>
+      <span class="control-label" style="display: block; text-align: center; margin-bottom: 10px;">Highlight Patterns</span>
+      <div class="pattern-buttons">
+        <button id="resonance-btn">Phase Resonance</button>
+        <button id="fibonacci-btn">Fibonacci Relation</button>
+        <button id="twin-btn">Twin Primes</button>
+      </div>
+    </div>
+    
+    <div class="description">
+      <p>Each point represents a prime-indexed eigenvalue (P<sub>n</sub>) plotted in the complex plane.</p>
+      <p>Magnitude = φ<sup>n</sup> | Angle = n·θ<sub>G</sub> where θ<sub>G</sub> = 2π/φ<sup>2</sup></p>
+      <p>This visualization demonstrates how consciousness modes self-organize into a fractal spiral, with eigenvalues spaced by the golden ratio (φ ≈ 1.618) to ensure optimal distribution and prevent harmonic overlaps.</p>
+    </div>
+  </div>
+
+  <script>
+    // Constants
+    const phi = (1 + Math.sqrt(5)) / 2; // Golden ratio ≈ 1.618
+    const goldenAngle = (2 * Math.PI) / (phi * phi); // Golden angle in radians
+    
+    // State variables
+    let primeCount = 25;
+    let showLabels = true;
+    let animationSpeed = 0.5;
+    let time = 0;
+    let isAnimating = true;
+    let highlightMode = 'none';
+    let animationFrameId = null;
+    let eigenvalues = [];
+    let highlighted = {};
+    
+    // SVG dimensions
+    const width = 600;
+    const height = 600;
+    const center = { x: width / 2, y: height / 2 };
+    
+    // DOM elements
+    const svg = d3.select('#visualization');
+    const primeCountInput = document.getElementById('prime-count');
+    const primeCountValue = document.getElementById('prime-count-value');
+    const animationSpeedInput = document.getElementById('animation-speed');
+    const animationSpeedValue = document.getElementById('animation-speed-value');
+    const showLabelsInput = document.getElementById('show-labels');
+    const animationToggle = document.getElementById('animation-toggle');
+    const resonanceBtn = document.getElementById('resonance-btn');
+    const fibonacciBtn = document.getElementById('fibonacci-btn');
+    const twinBtn = document.getElementById('twin-btn');
+    
+    // Initialize the visualization
+    function init() {
+      // Setup event listeners
+      primeCountInput.addEventListener('input', handlePrimeCountChange);
+      animationSpeedInput.addEventListener('input', handleAnimationSpeedChange);
+      showLabelsInput.addEventListener('change', handleShowLabelsChange);
+      animationToggle.addEventListener('click', toggleAnimation);
+      resonanceBtn.addEventListener('click', () => toggleHighlightMode('resonance'));
+      fibonacciBtn.addEventListener('click', () => toggleHighlightMode('fibonacci'));
+      twinBtn.addEventListener('click', () => toggleHighlightMode('twin'));
+      
+      // Generate initial prime numbers and eigenvalues
+      updatePrimes();
+      
+      // Start animation loop
+      animate();
+    }
+    
+    // Generate first n prime numbers
+    function generatePrimes(n) {
+      const primes = [];
+      let num = 2;
+      
+      while (primes.length < n) {
+        let isPrime = true;
+        
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+          if (num % i === 0) {
+            isPrime = false;
+            break;
+          }
+        }
+        
+        if (isPrime) {
+          primes.push(num);
+        }
+        
+        num++;
+      }
+      
+      return primes;
+    }
+    
+    // Calculate eigenvalues based on primes
+    function calculateEigenvalues(primes) {
+      return primes.map((prime, index) => {
+        const n = index + 1; // n starts from 1
+        const magnitude = Math.pow(phi, n);
+        const angle = n * goldenAngle;
+        
+        return {
+          prime,
+          n,
+          magnitude,
+          angle,
+          realPart: magnitude * Math.cos(angle),
+          imagPart: magnitude * Math.sin(angle),
+          dynamicAngle: (angle + time * (n / 5)) % (2 * Math.PI)
+        };
+      });
+    }
+    
+    // Create a scaling function for the radius
+    function createRadiusScale(eigenvalues) {
+      const maxMagnitude = Math.max(...eigenvalues.map(ev => ev.magnitude));
+      return d3.scaleLinear()
+        .domain([0, maxMagnitude])
+        .range([0, Math.min(width, height) * 0.4]);
+    }
+    
+    // Calculate which eigenvalues should be highlighted
+    function calculateHighlights() {
+      if (highlightMode === 'none') return {};
+      
+      const result = {};
+      
+      if (highlightMode === 'resonance') {
+        // Highlight eigenvalues that are approximately in phase
+        const angleThreshold = 0.2;
+        for (let i = 0; i < eigenvalues.length; i++) {
+          for (let j = i + 1; j < eigenvalues.length; j++) {
+            const angleDiff = Math.abs(eigenvalues[i].dynamicAngle - eigenvalues[j].dynamicAngle) % (2 * Math.PI);
+            const normalizedDiff = Math.min(angleDiff, 2 * Math.PI - angleDiff);
+            
+            if (normalizedDiff < angleThreshold) {
+              result[eigenvalues[i].prime] = true;
+              result[eigenvalues[j].prime] = true;
+            }
+          }
+        }
+      } else if (highlightMode === 'fibonacci') {
+        // Highlight Fibonacci-related primes
+        let a = 1, b = 1;
+        while (a <= eigenvalues.length) {
+          if (a <= eigenvalues.length) {
+            const index = a - 1;
+            if (index < eigenvalues.length) {
+              result[eigenvalues[index].prime] = true;
+            }
+          }
+          const temp = a + b;
+          a = b;
+          b = temp;
+        }
+      } else if (highlightMode === 'twin') {
+        // Highlight twin primes (primes that differ by 2)
+        for (let i = 0; i < eigenvalues.length - 1; i++) {
+          if (eigenvalues[i+1].prime - eigenvalues[i].prime === 2) {
+            result[eigenvalues[i].prime] = true;
+            result[eigenvalues[i+1].prime] = true;
+          }
+        }
+      }
+      
+      return result;
+    }
+    
+    // Generate spiral path
+    function generateSpiralPath(radiusScale) {
+      const maxRadius = Math.max(...eigenvalues.map(ev => ev.magnitude));
+      const scaledMaxRadius = radiusScale(maxRadius);
+      
+      let path = `M ${center.x} ${center.y}`;
+      
+      // Generate more points for smoother spiral
+      const points = 500;
+      for (let i = 0; i <= points; i++) {
+        const t = (i / points) * Math.log(scaledMaxRadius) / Math.log(phi);
+        const radius = Math.pow(phi, t);
+        const angle = t * goldenAngle;
+        
+        const x = center.x + radius * Math.cos(angle);
+        const y = center.y + radius * Math.sin(angle);
+        
+        path += ` L ${x} ${y}`;
+      }
+      
+      return path;
+    }
+    
+    // Render the visualization
+    function render() {
+      // Clear SVG
+      svg.selectAll('*').remove();
+      
+      // Create radius scale
+      const radiusScale = createRadiusScale(eigenvalues);
+      
+      // Draw coordinate grid
+      svg.append('line')
+        .attr('x1', 0)
+        .attr('y1', center.y)
+        .attr('x2', width)
+        .attr('y2', center.y)
+        .attr('stroke', '#3b3b3b')
+        .attr('stroke-width', '1');
+      
+      svg.append('line')
+        .attr('x1', center.x)
+        .attr('y1', 0)
+        .attr('x2', center.x)
+        .attr('y2', height)
+        .attr('stroke', '#3b3b3b')
+        .attr('stroke-width', '1');
+      
+      // Draw spiral path
+      svg.append('path')
+        .attr('d', generateSpiralPath(radiusScale))
+        .attr('fill', 'none')
+        .attr('stroke', '#553c9a')
+        .attr('stroke-width', '1')
+        .attr('stroke-opacity', '0.4');
+      
+      // Draw eigenvalues
+      eigenvalues.forEach(ev => {
+        const isHighlighted = highlighted[ev.prime];
+        
+        // Static position based on eigenvalue
+        const x = center.x + radiusScale(ev.magnitude) * Math.cos(ev.angle);
+        const y = center.y + radiusScale(ev.magnitude) * Math.sin(ev.angle);
+        
+        // Dynamic position based on time
+        const dynamicX = center.x + radiusScale(ev.magnitude) * Math.cos(ev.dynamicAngle);
+        const dynamicY = center.y + radiusScale(ev.magnitude) * Math.sin(ev.dynamicAngle);
+        
+        // Size based on prime value (lower primes are larger)
+        const baseSize = 10;
+        const size = baseSize - (Math.log(ev.n) * 1.5);
+        
+        // Draw connection line to origin
+        svg.append('line')
+          .attr('x1', center.x)
+          .attr('y1', center.y)
+          .attr('x2', dynamicX)
+          .attr('y2', dynamicY)
+          .attr('stroke', isHighlighted ? '#f9a03f' : '#8b5cf6')
+          .attr('stroke-width', isHighlighted ? '1.5' : '0.5')
+          .attr('stroke-opacity', isHighlighted ? '0.8' : '0.3');
+        
+        // Draw static point showing original position
+        svg.append('circle')
+          .attr('cx', x)
+          .attr('cy', y)
+          .attr('r', 2)
+          .attr('fill', '#6d28d9')
+          .attr('fill-opacity', '0.4');
+        
+        // Draw dynamic point
+        svg.append('circle')
+          .attr('cx', dynamicX)
+          .attr('cy', dynamicY)
+          .attr('r', isHighlighted ? size * 1.5 : size)
+          .attr('fill', isHighlighted ? '#f9a03f' : '#8b5cf6')
+          .attr('fill-opacity', isHighlighted ? '0.9' : '0.7')
+          .attr('stroke', isHighlighted ? '#ffedd5' : '#c4b5fd')
+          .attr('stroke-width', '1');
+        
+        // Draw label
+        if (showLabels) {
+          svg.append('text')
+            .attr('x', dynamicX + (size + 5) * Math.cos(ev.dynamicAngle))
+            .attr('y', dynamicY + (size + 5) * Math.sin(ev.dynamicAngle))
+            .attr('font-size', isHighlighted ? '12' : '10')
+            .attr('fill', isHighlighted ? '#f9a03f' : '#c4b5fd')
+            .attr('text-anchor', 'middle')
+            .attr('dominant-baseline', 'middle')
+            .text(ev.prime);
+        }
+      });
+      
+      // Draw center point
+      svg.append('circle')
+        .attr('cx', center.x)
+        .attr('cy', center.y)
+        .attr('r', 4)
+        .attr('fill', '#f9a03f')
+        .attr('stroke', '#ffedd5')
+        .attr('stroke-width', '1');
+    }
+    
+    // Animation loop
+    function animate() {
+      if (isAnimating) {
+        time += 0.01 * animationSpeed;
+        eigenvalues = calculateEigenvalues(generatePrimes(primeCount));
+        highlighted = calculateHighlights();
+        render();
+      }
+      
+      animationFrameId = requestAnimationFrame(animate);
+    }
+    
+    // Event handler for prime count change
+    function handlePrimeCountChange() {
+      primeCount = parseInt(primeCountInput.value);
+      primeCountValue.textContent = primeCount;
+      updatePrimes();
+    }
+    
+    // Event handler for animation speed change
+    function handleAnimationSpeedChange() {
+      animationSpeed = parseFloat(animationSpeedInput.value);
+      animationSpeedValue.textContent = animationSpeed.toFixed(1) + 'x';
+    }
+    
+    // Event handler for show labels change
+    function handleShowLabelsChange() {
+      showLabels = showLabelsInput.checked;
+    }
+    
+    // Toggle animation
+    function toggleAnimation() {
+      isAnimating = !isAnimating;
+      animationToggle.textContent = isAnimating ? 'Pause' : 'Play';
+      animationToggle.style.backgroundColor = isAnimating ? '#6b46c1' : '#4a5568';
+    }
+    
+    // Toggle highlight mode
+    function toggleHighlightMode(mode) {
+      highlightMode = highlightMode === mode ? 'none' : mode;
+      
+      // Update button styles
+      resonanceBtn.classList.toggle('active', highlightMode === 'resonance');
+      fibonacciBtn.classList.toggle('active', highlightMode === 'fibonacci');
+      twinBtn.classList.toggle('active', highlightMode === 'twin');
+    }
+    
+    // Update primes and eigenvalues
+    function updatePrimes() {
+      const primes = generatePrimes(primeCount);
+      eigenvalues = calculateEigenvalues(primes);
+      highlighted = calculateHighlights();
+    }
+    
+    // Initialize the visualization
+    init();
+  </script>
+</body>
+</html>
