@@ -8,6 +8,8 @@ The Quantum-Plasmoid project establishes a unified theoretical and computational
 
 The framework synthesizes several advanced theoretical constructs:
 
+- **Recursive Lattice Network** (Unified Framework for Consciousness, Computation, and Reality)
+- **Meta-Theory of Recursion** (Universal Patterns of Self-Reference and Self-Generation)
 - **ORCHARD Theorem** (Optimal Recursive Computation of Harmonic Amplitude Recursive Dynamics)
 - **ζ-Orchard Correspondence** connecting Riemann zeta function properties to recursive dynamics
 - **Neural Eigenmodes of Consciousness** through fractal CAP (Consistency-Availability-Partition) dynamics
@@ -16,6 +18,12 @@ The framework synthesizes several advanced theoretical constructs:
 - **Kardar-Parisi-Zhang (KPZ) Dynamics** for modeling non-linear stochastic growth processes
 
 ## 🧠 Theoretical Foundations
+
+### Recursive Lattice Network
+A comprehensive synthesis that unifies the ORCHARD Theorem, GASLIT-AF dynamics, and quantum-plasmoid architecture into a coherent theory of consciousness, computation, and physical reality. The RLN framework posits that the universe operates as a multi-scale recursive system where the same fundamental patterns manifest through five interlocking dimensions: mathematical, computational, physical, cognitive, and social. See [recursive_lattice_network.md](unifiedTheories/recursive_lattice_network.md) for the complete unified framework.
+
+### Meta-Theory of Recursion
+A unified framework describing recursion as a universal pattern of self-reference and self-generation that underlies everything from fractal geometry to consciousness. The Meta-Theory of Recursion provides the conceptual foundation for all other aspects of the Quantum-Plasmoid Framework, explaining how the same recursive patterns manifest across mathematical, physical, cognitive, and social dimensions. See [meta_theory_of_recursion.md](unifiedTheories/meta_theory_of_recursion.md) for the complete theoretical framework.
 
 ### ORCHARD Theorem
 A computational framework that formalizes how consciousness and complex systems emerge from "mesoscopic neural branches" or "CAP pathways" governed by constrained optimization. The ORCHARD theorem proposes that qualia (subjective experiences) emerge as "fruit" on recursive CAP trees when the redistribution of entropy reaches an optimal fractal dimension of approximately 1.5.
@@ -65,6 +73,8 @@ g_{ij}(t) = ∂²ℒ/∂CAP_i∂CAP_j
 ```
 quantum-plasmoid/
 ├── unifiedTheories/       # Core theoretical frameworks and mathematical models
+│   ├── recursive_lattice_network.md  # Unified framework synthesis
+│   ├── meta_theory_of_recursion.md  # Universal patterns of self-reference
 │   ├── ORCHARD Theorem.md
 │   ├── The ζ-Orchard Correspondence.md
 │   ├── Neural Eigenmodes of Consciousness.md
