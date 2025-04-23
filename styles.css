@@ -1,0 +1,1107 @@
+/* Additional styles to complete the Quantum-Plasmoid GitHub Pages */
+
+/* Update font variables to match HTML */
+:root {
+    --primary-color: #5D2CE2;
+    --secondary-color: #22D1EE;
+    --third-color: #7A67EE;
+    --background-color: #050517;
+    --text-color: #E0E0F0;
+    --card-bg: rgba(14, 14, 36, 0.8);
+    --alt-bg: rgba(18, 18, 42, 0.7);
+    --heading-font: 'Orbitron', sans-serif;
+    --body-font: 'Space Grotesk', sans-serif;
+}
+
+/* Canvas and Background Effects */
+#cosmic-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: radial-gradient(circle at center, rgba(15, 15, 40, 0.8) 0%, rgba(5, 5, 23, 1) 100%);
+}
+
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc1IiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGZpbHRlcj0idXJsKCNhKSIgb3BhY2l0eT0iLjA1IiBkPSJNMCAwaDMwMHYzMDBIMHoiLz48L3N2Zz4=');
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.ethereal-glow {
+    position: fixed;
+    width: 40vw;
+    height: 40vw;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.ethereal-glow.top-left {
+    top: -20vw;
+    left: -20vw;
+    background: radial-gradient(circle at center, var(--primary-color), transparent 70%);
+}
+
+.ethereal-glow.bottom-right {
+    bottom: -20vw;
+    right: -20vw;
+    background: radial-gradient(circle at center, var(--secondary-color), transparent 70%);
+}
+
+.principles-glow {
+    top: 50%;
+    left: -20vw;
+    transform: translateY(-50%);
+    background: radial-gradient(circle at center, var(--third-color), transparent 70%);
+}
+
+.applications-glow {
+    top: 50%;
+    right: -20vw;
+    transform: translateY(-50%);
+    background: radial-gradient(circle at center, var(--secondary-color), transparent 70%);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 6rem 0;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.quantum-symbol {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    background: conic-gradient(
+        from 0deg,
+        var(--primary-color) 0%,
+        var(--secondary-color) 33%,
+        var(--third-color) 66%,
+        var(--primary-color) 100%
+    );
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(93, 44, 226, 0.4);
+    animation: pulse 5s infinite alternate;
+}
+
+.quantum-symbol::before {
+    content: '';
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    background-color: var(--background-color);
+    z-index: 1;
+}
+
+.quantum-symbol::after {
+    content: '';
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, var(--secondary-color), transparent 80%);
+    animation: glow 3s infinite alternate;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.quantum {
+    color: var(--secondary-color);
+    background: linear-gradient(120deg, var(--secondary-color), #22EEEE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.plasmoid {
+    color: var(--primary-color);
+    background: linear-gradient(120deg, var(--primary-color), var(--third-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    font-weight: 300;
+    color: rgba(224, 224, 240, 0.9);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    opacity: 0.6;
+    animation: fadeInOut 2s infinite;
+}
+
+.scroll-indicator p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.8;
+}
+
+.scroll-arrow i {
+    font-size: 1.5rem;
+    animation: bounce 2s infinite;
+}
+
+/* Navigation */
+.nav-container {
+    background-color: rgba(10, 10, 30, 0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-links li {
+    margin: 0 0.2rem;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 1.2rem 1rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    position: relative;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.nav-link i {
+    margin-right: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    transition: width 0.3s;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.github-link {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    margin-left: 0.5rem;
+}
+
+.github-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Section Styling */
+.section {
+    padding: 8rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: white;
+    position: relative;
+    display: inline-block;
+}
+
+.section-line {
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* Framework Section */
+.framework-section {
+    background-color: rgba(10, 10, 25, 0.5);
+}
+
+.framework-content {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.framework-text {
+    flex: 1;
+}
+
+.large-text {
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.fractal-orb {
+    flex: 0 0 350px;
+    height: 350px;
+    position: relative;
+}
+
+.orb-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 40%, var(--primary-color), var(--third-color));
+    box-shadow: 0 0 30px rgba(93, 44, 226, 0.6);
+    z-index: 2;
+}
+
+.orb-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    border: 2px solid rgba(122, 103, 238, 0.3);
+    transform: translate(-50%, -50%);
+}
+
+.ring-1 {
+    width: 170px;
+    height: 170px;
+    animation: rotate 20s linear infinite;
+}
+
+.ring-2 {
+    width: 240px;
+    height: 240px;
+    border: 2px solid rgba(34, 209, 238, 0.3);
+    animation: rotate 40s linear infinite reverse;
+}
+
+.ring-3 {
+    width: 310px;
+    height: 310px;
+    animation: rotate 60s linear infinite;
+}
+
+.orb-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at center, transparent 85%, rgba(34, 209, 238, 0.2) 100%);
+    animation: pulse 4s infinite alternate;
+}
+
+.quantum-quote {
+    max-width: 800px;
+    margin: 5rem auto 0;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.quantum-quote p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-style: italic;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+}
+
+.quantum-quote p::before,
+.quantum-quote p::after {
+    content: '"';
+    font-size: 3rem;
+    opacity: 0.3;
+    position: absolute;
+}
+
+.quantum-quote p::before {
+    top: -20px;
+    left: -20px;
+}
+
+.quantum-quote p::after {
+    bottom: -40px;
+    right: -20px;
+}
+
+.quote-line {
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    margin: 0 auto 2rem;
+    border-radius: 2px;
+}
+
+/* Principles Section */
+.principles-section {
+    background-color: rgba(5, 5, 23, 0.7);
+    position: relative;
+    overflow: hidden;
+}
+
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.principle-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s, box-shadow 0.4s;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.principle-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.principle-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--third-color));
+    box-shadow: 0 5px 15px rgba(93, 44, 226, 0.3);
+}
+
+.principle-icon i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.principle-content {
+    position: relative;
+    z-index: 1;
+}
+
+.principle-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: white;
+    text-align: center;
+}
+
+.principle-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    text-align: center;
+}
+
+.principle-particle-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    pointer-events: none;
+    background-image: radial-gradient(circle at center, transparent 50%, rgba(34, 209, 238, 0.5) 100%);
+}
+
+/* Theorems Section */
+.theorems-section {
+    background-color: rgba(10, 10, 25, 0.5);
+    position: relative;
+}
+
+.theorem-carousel {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.theorem-track {
+    display: flex;
+    transition: transform 0.5s ease-out;
+}
+
+.theorem-card {
+    flex: 0 0 100%;
+    display: flex;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.theorem-visual {
+    flex: 0 0 40%;
+    position: relative;
+    overflow: hidden;
+}
+
+.orchard-visual {
+    background: linear-gradient(45deg, rgba(93, 44, 226, 0.6), rgba(122, 103, 238, 0.3));
+}
+
+.zeta-visual {
+    background: linear-gradient(45deg, rgba(34, 209, 238, 0.6), rgba(93, 44, 226, 0.3));
+}
+
+.eigenmode-visual {
+    background: linear-gradient(45deg, rgba(122, 103, 238, 0.6), rgba(34, 209, 238, 0.3));
+}
+
+.theorem-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="white" opacity="0.5"/></svg>');
+    animation: float 20s infinite linear;
+}
+
+.theorem-content {
+    flex: 0 0 60%;
+    padding: 2.5rem;
+}
+
+.theorem-content h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.theorem-tagline {
+    color: var(--secondary-color);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.theorem-description {
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    line-height: 1.7;
+}
+
+.theorem-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--secondary-color);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.theorem-link i {
+    margin-left: 0.5rem;
+    transition: transform 0.3s;
+}
+
+.theorem-link:hover {
+    color: white;
+}
+
+.theorem-link:hover i {
+    transform: translateX(3px);
+}
+
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.carousel-button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.carousel-button:hover {
+    opacity: 1;
+}
+
+.carousel-dots {
+    display: flex;
+    margin: 0 1.5rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(224, 224, 240, 0.3);
+    margin: 0 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.dot.active {
+    background-color: var(--secondary-color);
+    transform: scale(1.2);
+}
+
+/* Applications Section */
+.applications-section {
+    background-color: rgba(5, 5, 23, 0.7);
+    position: relative;
+    overflow: hidden;
+}
+
+.applications-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.application-card {
+    flex: 0 0 calc(50% - 1rem);
+    min-width: 300px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 2.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: transform 0.4s, box-shadow 0.4s;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.application-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.application-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    box-shadow: 0 5px 15px rgba(34, 209, 238, 0.3);
+}
+
+.application-icon i {
+    font-size: 1.6rem;
+    color: white;
+}
+
+.application-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.application-card p {
+    margin-bottom: 2rem;
+    flex-grow: 1;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+.application-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--secondary-color);
+    font-weight: 600;
+    transition: color 0.3s;
+    align-self: flex-start;
+}
+
+.application-link i {
+    margin-left: 0.5rem;
+    transition: transform 0.3s;
+}
+
+.application-link:hover {
+    color: white;
+}
+
+.application-link:hover i {
+    transform: translateX(3px);
+}
+
+/* Structure Section */
+.structure-section {
+    background-color: rgba(10, 10, 25, 0.5);
+}
+
+.structure-interactive {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.structure-map {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.structure-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.structure-node:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.root-node {
+    margin-bottom: 3rem;
+    background-color: rgba(93, 44, 226, 0.2);
+    border: 1px solid rgba(93, 44, 226, 0.3);
+}
+
+.node-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--third-color));
+    margin-bottom: 0.5rem;
+}
+
+.node-icon i {
+    color: white;
+    font-size: 1rem;
+}
+
+.node-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+}
+
+.structure-branches {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.structure-branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 120px;
+}
+
+.branch-line {
+    width: 2px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 0.5rem;
+}
+
+.branch-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.8rem;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.branch-node:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+.structure-details {
+    flex: 1;
+    min-width: 300px;
+}
+
+.structure-detail {
+    display: none;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 2.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    height: 100%;
+}
+
+.structure-detail.active {
+    display: block;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.structure-detail h3 {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.structure-detail h3 i {
+    margin-right: 0.8rem;
+    color: var(--secondary-color);
+}
+
+.structure-detail p {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.structure-detail ul {
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+}
+
+.structure-detail li {
+    margin-bottom: 0.8rem;
+    opacity: 0.9;
+}
+
+.detail-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--secondary-color);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.detail-link i {
+    margin-left: 0.5rem;
+    transition: transform 0.3s;
+}
+
+.detail-link:hover {
+    color: white;
+}
+
+.detail-link:hover i {
+    transform: translateX(3px);
+}
+
+/* Animations */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 20px rgba(93, 44, 226, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 40px rgba(93, 44, 226, 0.6);
+    }
+}
+
+@keyframes glow {
+    0% {
+        opacity: 0.5;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 0.9;
+        transform: scale(1.1);
+    }
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes float {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100px 100px;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* CTA Section */
+.cta-section {
+    background-color: rgba(5, 5, 23, 0.9);
+    text-align: center;
+    padding: 6rem 0;
+}
+
+.cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--third-color));
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(93, 44, 226, 0.4);
+}
+
+.cta-button i {
+    margin-right: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(93, 44, 226, 0.6);
+}
+
+/* Footer */
+footer {
+    background-color: rgba(5, 5, 20, 0.95);
+    padding: 4rem 0 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.small-quantum-symbol {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    background: conic-gradient(
+        from 0deg,
+        var(--primary-color) 0%,
+        var(--secondary-color) 33%,
+        var(--third-color) 66%,
+        var(--primary-color) 100%
+    );
+    position: relative;
+}
+
+.small-quantum-symbol::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    background-color: var(--background-color);
+}
+
+.footer-logo p {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.footer-links a i {
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-github a {
+    display: flex;
+    align-items: center;
+    padding: 0.7rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.footer-github a i {
+    margin-right: 0.7rem;
+    font-size: 1.2rem;
+}
+
+.footer-github a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-copyright p {
+    opacity: 0.5;
+    font-size: 0.9rem;
+    margin: 0;
+}
