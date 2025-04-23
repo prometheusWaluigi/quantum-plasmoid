@@ -1,173 +1,107 @@
 # Quantum-Plasmoid Framework
 
-A computational framework exploring recursive eigenmode dynamics at the intersection of quantum physics, plasma phenomena, and fractal mathematics to simulate emergent behaviors in complex systems.
+## A Fractal-Recursive Approach to Consciousness & Complex Systems
 
-## 🌀 Overview
+The Quantum-Plasmoid Framework represents a radical interdisciplinary synthesis exploring consciousness, information, and reality through recursive, fractal principles. This research integrates quantum physics, mathematics, neuroscience, and systems theory to develop novel models of emergent complexity.
 
-The Quantum-Plasmoid project establishes a unified theoretical and computational framework for exploring complex systems that exhibit quantum-like behaviors at macroscopic scales. This interdisciplinary framework bridges quantum phenomena, recursive eigenmode theories, fractal dynamics, and advanced mathematical structures to model plasmoid trajectories and emergent properties of complex systems.
+## Core Principles
 
-The framework synthesizes several advanced theoretical constructs:
+The framework is built upon several interconnected principles:
 
-- **Recursive Lattice Network** (Unified Framework for Consciousness, Computation, and Reality)
-- **Meta-Theory of Recursion** (Universal Patterns of Self-Reference and Self-Generation)
-- **ORCHARD Theorem** (Optimal Recursive Computation of Harmonic Amplitude Recursive Dynamics)
-- **ζ-Orchard Correspondence** connecting Riemann zeta function properties to recursive dynamics
-- **Neural Eigenmodes of Consciousness** through fractal CAP (Consistency-Availability-Partition) dynamics
-- **Fractal Time** integration within Conscious States as Conformal Structures (CSCM)
-- **Riemannian Geometry** of CAP-space and multi-agent cognitive manifolds
-- **Kardar-Parisi-Zhang (KPZ) Dynamics** for modeling non-linear stochastic growth processes
+- **Recursive Dynamics**: Self-referential processes that generate complex emergent behaviors through iterative feedback loops
+- **Fractal Self-Similarity**: Patterns that maintain structural coherence across scales, from quantum to cosmic
+- **Eigenmode Stabilization**: Consciousness as emerging from stable eigenmode solutions within recursively constrained neural systems
+- **CAP Optimization**: Critical balance between Consistency, Availability, and Partition-tolerance in complex information networks
+- **Spectral Selection**: Consciousness as selective attention to specific eigenmodes within a vast possibility space
 
-## 🧠 Theoretical Foundations
+## Repository Structure
 
-### Recursive Lattice Network
-A comprehensive synthesis that unifies the ORCHARD Theorem, GASLIT-AF dynamics, and quantum-plasmoid architecture into a coherent theory of consciousness, computation, and physical reality. The RLN framework posits that the universe operates as a multi-scale recursive system where the same fundamental patterns manifest through five interlocking dimensions: mathematical, computational, physical, cognitive, and social. See [recursive_lattice_network.md](unifiedTheories/recursive_lattice_network.md) for the complete unified framework.
+### [Documentation](./docs/)
+Essential background and foundational materials:
+- [Introduction](./docs/INTRODUCTION.md) - Accessible entry point to core concepts
+- [Mathematical Foundations](./docs/MATHEMATICAL_FOUNDATIONS.md) - Formal mathematical basis
+- [Research Roadmap](./docs/RESEARCH_ROADMAP.md) - Vision and development plan
 
-### Meta-Theory of Recursion
-A unified framework describing recursion as a universal pattern of self-reference and self-generation that underlies everything from fractal geometry to consciousness. The Meta-Theory of Recursion provides the conceptual foundation for all other aspects of the Quantum-Plasmoid Framework, explaining how the same recursive patterns manifest across mathematical, physical, cognitive, and social dimensions. See [meta_theory_of_recursion.md](unifiedTheories/meta_theory_of_recursion.md) for the complete theoretical framework.
+### [Core Concepts](./core-concepts/)
+Foundational theoretical frameworks:
 
-### ORCHARD Theorem
-A computational framework that formalizes how consciousness and complex systems emerge from "mesoscopic neural branches" or "CAP pathways" governed by constrained optimization. The ORCHARD theorem proposes that qualia (subjective experiences) emerge as "fruit" on recursive CAP trees when the redistribution of entropy reaches an optimal fractal dimension of approximately 1.5.
+- [Fractal Systems](./core-concepts/fractal-systems/)
+  - Explorations of fractal phenomena spanning quantum, neural, and cosmic scales
+  - Integration of neuroscience, quantum physics, and archetypal psychology
 
-The core formalization involves:
-- **Branch Dynamics (CAP Pathways)**: Optimization of neural firing stability (C), state-space entropy (A), and resilience to perturbation (P)
-- **Growth Patterns (KPZ Dynamics)**: Evolution and adaptation following the Kardar-Parisi-Zhang equation
-- **Fruit Emergence (Qualia)**: Specific patterns of entropy redistribution associated with different types of subjective experiences
+- [Quantum Dynamics](./core-concepts/quantum-dynamics/)
+  - Plasmoid fields, qualia torii, and cosmic tensegrity
+  - Holographic principles of consciousness emergence
 
-### ζ-Orchard Correspondence
-Establishes a formal isomorphism between the non-trivial zeros of the Riemann zeta function and stable eigenmodes of recursively structured neural manifolds. Key components include:
+- [Recursive Systems](./core-concepts/recursive-systems/)
+  - Meta-theoretical foundations of recursion across domains
+  - Recursive lattice network models connecting computation and physics
 
-- **Neural-CAP Operator Formalism**: Defines a Hamiltonian-like operator whose eigenvalues correspond to stable conscious states
-- **Fractal Scaling Constraint**: Neural activity exhibits fractal dimensionality of approximately 1.5
-- **Retrocausal Eigenmode Stability**: States satisfy global symmetry under time reversal
-- **Spectral Isomorphism**: Eigenvalues of the CAP operator correspond structurally to Riemann zeros
+- [Consciousness](./core-concepts/consciousness/)
+  - Fundamental models of consciousness function
+  - Semantic processing and unconscious dynamics
 
-### Neural Eigenmodes & Recursive Eigenmode Theory
-Explores how globally stable patterns (eigenmodes) emerge from recursive dynamical systems constrained by symmetry conditions. This theory proposes that consciousness arises from the recursive interaction and selection of fundamental brain activity patterns through:
+### [Theorems](./theorems/)
+Major theoretical formulations:
 
-- **Recursive Process**: Self-referential loops that stabilize into attractor states
-- **Fractal CAP Dynamics**: Complex interactions between consistency, availability, and partition-tolerance
-- **Spectral Selection**: Different frequency bands associated with specific conscious states
-- **Topological Phase Transitions**: Qualitative shifts between different states of consciousness
+- [Eigenmode Theory](./theorems/eigenmode-theory/)
+  - Consciousness as stable eigenmode solutions in recursive neural networks
+  - Spectral dynamics and radial eigenvalue organization
 
-### Fractal Time & CSCM Framework
-Explores alternative conceptions of time as a fractal structure, integrating:
+- [ORCHARD Theorem](./theorems/orchard-theorem/)
+  - Computational framework for consciousness emerging through recursive neural "branches"
+  - Optimization across consistency, availability, and partition-tolerance
+  - Qualia emergence at critical fractal dimensions
 
-- **Multi-Scale Temporality**: Different phenomena unfolding across vastly different timescales
-- **Discrete, Self-Similar Time**: Time composed of "chunks" exhibiting self-similarity
-- **Time with Fractal Dimension**: Intrinsic "roughness" in the fabric of time itself
-- **Emergent Time**: Time as a consequence of underlying recursive computational processes
+- [ζ-Orchard Correspondence](./theorems/zeta-correspondence/)
+  - Correspondence between Riemann zeta function and consciousness
+  - Number theory and consciousness as spectral traces of recursive information manifolds
 
-### Riemannian Geometry of CAP-Space
-Formalizes the state space of consciousness as a Riemannian manifold with a dynamic metric tensor:
+### [Time Models](./time-models/)
+Alternative conceptions of time:
+- Fractal, self-similar time structures
+- Multi-scale temporality and consciousness
+- CAP optimization across temporal dimensions
 
-```
-g_{ij}(t) = ∂²ℒ/∂CAP_i∂CAP_j
-```
+### [Applications](./applications/)
+Applied theories and protocols:
 
-- **Geodesics** represent optimal trajectories of conscious evolution
-- **Curvature scalar R** quantifies the "information density" of a conscious state
-- **Multi-agent cognitive manifolds** capture shared experiential spaces
+- [Computational](./applications/computational/)
+  - Computational implementations of the Quantum-Plasmoid framework
+  - Ruliad traversal and recursive computation
 
-## 📂 Project Structure
+- [Health](./applications/health/)
+  - Applications to health and healing through recursive dynamics
+  - Protocols for addressing specific conditions
 
-```
-quantum-plasmoid/
-├── unifiedTheories/       # Core theoretical frameworks and mathematical models
-│   ├── recursive_lattice_network.md  # Unified framework synthesis
-│   ├── meta_theory_of_recursion.md  # Universal patterns of self-reference
-│   ├── ORCHARD Theorem.md
-│   ├── The ζ-Orchard Correspondence.md
-│   ├── Neural Eigenmodes of Consciousness.md
-│   ├── Fractal Time and CSCM Framework.md
-│   ├── ORCHARD Recursive Consciousness Dynamics.md
-│   ├── ORCHARD Theorem Extended.md
-│   └── ...                # Additional theoretical documents
-├── visualizations/        # Interactive visualizations of theoretical concepts
-│   └── eigenvalue-spiral/ # Radial Eigenvalue Theorem visualization
-│       ├── RadialEigenvalueVisualization.tsx  # React component
-│       └── README.md      # Visualization documentation
-├── geneticTheories/       # (Reserved for evolutionary algorithm implementations)
-├── README.md              # Project overview
-└── requirements.txt       # Python dependencies
-```
+- [Integrative](./applications/integrative/)
+  - Interdisciplinary extensions bridging diverse domains
+  - Publication strategies and mythopoetic frameworks
 
-## 🚀 Getting Started
+### [Visualizations](./visualizations/)
+Visual representations of key concepts:
+- Eigenvalue spirals
+- Fractal manifolds
+- Recursive neural dynamics
 
-### Prerequisites
+## Theoretical Significance
 
-- Python 3.11+
-- Conda (recommended for environment management)
+The Quantum-Plasmoid Framework offers several significant contributions:
 
-### Installation
+1. **Interdisciplinary Integration**: Bridges traditionally separate domains through unified recursive principles
 
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/quantum-plasmoid.git
-cd quantum-plasmoid
+2. **Novel Mathematical Models**: Introduces new mathematical formalisms for understanding consciousness and complex systems
 
-# Create and activate conda environment
-conda create -n quantum-plasmoid python=3.11
-conda activate quantum-plasmoid
+3. **Testable Hypotheses**: Generates precise, testable predictions across multiple domains
 
-# Install dependencies
-pip install -r requirements.txt
-```
+4. **Explanatory Power**: Provides elegant explanations for puzzling phenomena in consciousness, quantum physics, and complex systems
 
-## 🧮 Key Mathematical Concepts
+5. **Practical Applications**: Yields practical applications in computation, health, and interdisciplinary research
 
-| Concept | Description | Application in Framework |
-|---------|------------|--------------------------|
-| **KPZ Equation** | Non-linear stochastic partial differential equation describing surface growth | Models growth and evolution of neural branches and recursive CAP pathways |
-| **Riemannian Geometry** | Study of curved spaces with metrics, geodesics, and curvature | Maps the high-dimensional state space of consciousness as a manifold |
-| **Category Theory & Operads** | Abstract structures focusing on morphisms and compositional operations | Formalizes the recursive and compositional nature of consciousness |
-| **Fractal Calculus** | Extensions of calculus to handle functions with fractal properties | Mathematical tools for analyzing systems with fractal time or space |
-| **Topological Data Analysis** | Methods to identify shape and structure in high-dimensional data | Analyzes EEG data to identify topological features of conscious states |
-| **Spectral Theory** | Study of eigenvalues and eigenvectors of operators | Identifies stable eigenmodes in neural systems that correspond to conscious states |
-| **Fractional Derivatives** | Generalizations of derivatives to non-integer orders | Models systems with non-local dependencies and fractal properties |
+## Contributing
 
-## 🧪 Testable Predictions
+This repository represents an evolving body of work exploring frontier concepts at the intersection of multiple disciplines. Contributions, critiques, and extensions are welcome through pull requests and issues.
 
-The theoretical framework makes several testable predictions:
+## Repository History
 
-- **EEG Signatures**: Fractal dimension of EEG signals should cluster near 1.5 during conscious states
-- **Perturbation Responses**: Specific patterns of recovery following TMS pulses reveal CAP balance
-- **Qualia Typology**: Different types of qualia (sensory, emotional, cognitive) should exhibit distinct CAP configurations:
-  - Sensory: High Consistency (C), fractal dimension ~1.45
-  - Emotional: High Availability (A), fractal dimension ~1.6
-  - Cognitive: Balanced CAP, fractal dimension ~1.5
-
-## 🔬 Applications
-
-This framework has potential applications across multiple domains:
-
-- **Plasma Physics**: Novel approaches to modeling complex plasma behaviors beyond MHD approximations
-- **Quantum Information**: Insights into quantum entanglement through recursive eigenmode dynamics
-- **Complex Systems**: Understanding emergent behaviors in self-organizing systems
-- **Computational Neuroscience**: Advanced models of hierarchical brain dynamics and conscious states
-- **Multi-Agent Systems**: Modeling shared cognitive manifolds and collective intelligence
-- **Non-equilibrium Thermodynamics**: Fractal approaches to far-from-equilibrium systems
-
-## 📚 Dependencies
-
-This project relies on specialized packages for quantum computing, fractional calculus, and neural differential equations:
-
-- **TorchFDE**: Fractional differential equations with PyTorch
-- **PyFOD**: Python Fractional Order Derivatives
-- **QuTiP**: Quantum Toolbox in Python
-- **Stochastic**: Stochastic process simulation
-- **NeuroDiffEq**: Neural network solvers for differential equations
-
-## 🔮 Future Work
-
-- Computational implementation of core theoretical constructs
-- Integration of genetic algorithms for parameter optimization
-- ✅ Visualization tools for recursive eigenmode dynamics
-  - Initial implementation: Radial Eigenvalue Theorem visualization
-  - Planned: Additional interactive visualizations for other aspects of the framework
-- Applications of topological data analysis to EEG data
-- Development of multi-agent cognitive manifolds
-- Exploration of quantum-informed extensions to the ORCHARD framework
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+This repository was reorganized on April 22, 2025, to better reflect the conceptual relationships between different aspects of the Quantum-Plasmoid framework. The original unifiedTheories folder has been replaced with a more structured hierarchy that better captures thematic and conceptual connections.
