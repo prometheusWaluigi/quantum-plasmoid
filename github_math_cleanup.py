@@ -49,6 +49,12 @@ def latex_to_unicode(expr):
     expr = re.sub(r"\\([a-zA-Z]+)", r"", expr)
     # Remove curly braces
     expr = expr.replace('{', '').replace('}', '')
+    # Add space after [ if not present
+    expr = re.sub(r'\[([^ ])', r'[ \1', expr)
+    # Add space before ; if not present
+    expr = re.sub(r'([^ ])(;)', r'\1 \2', expr)
+    # Add space before ] if not present
+    expr = re.sub(r'([^ ])(\])', r'\1 \2', expr)
     # Remove double spaces
     expr = re.sub(r" +", " ", expr)
     return expr.strip()
@@ -56,7 +62,8 @@ def latex_to_unicode(expr):
 def process_math_blocks(text):
     # Block math first
     def block_repl(match):
-        return '\n' + latex_to_unicode(match.group(1)) + '\n'
+    # Remove extra newline before output
+        return latex_to_unicode(match.group(1))
     text = BLOCK_MATH.sub(block_repl, text)
     text = LATEX_BLOCK.sub(block_repl, text)
     # Inline math

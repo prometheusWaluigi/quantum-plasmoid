@@ -13,12 +13,26 @@ This is a formula:
 This is a formula:
 Sₜ₊₁ = ℂ[ Ψₑₓₜ(Sₜ₊₁) ⊕ Ψᵢₙₜ(Sₜ₊₁) ; Q ]
 """
-    assert process_math_blocks(input1).strip() == expected1.strip()
+    actual1 = process_math_blocks(input1).strip()
+    if actual1 != expected1.strip():
+        print('Test 1 failed:')
+        print('Actual:')
+        print(repr(actual1))
+        print('Expected:')
+        print(repr(expected1.strip()))
+    assert actual1 == expected1.strip()
 
     # Test inline math
     input2 = r"Here is inline math: $a_{ext} + b_{int}$ and $\Psi_{tot}$"
     expected2 = "Here is inline math: `aₑₓₜ + bᵢₙₜ` and `Ψₜₒₜ`"
-    assert process_math_blocks(input2).strip() == expected2.strip()
+    actual2 = process_math_blocks(input2).strip()
+    if actual2 != expected2.strip():
+        print('Test 2 failed:')
+        print('Actual:')
+        print(repr(actual2))
+        print('Expected:')
+        print(repr(expected2.strip()))
+    assert actual2 == expected2.strip()
 
     # Test block math with $$
     input3 = """
@@ -31,7 +45,14 @@ $$
 Aₜₒₜ = Bₑₓₜ + Cᵢₙₜ
 
 """
-    assert process_math_blocks(input3).strip() == expected3.strip()
+    actual3 = process_math_blocks(input3).strip()
+    if actual3 != expected3.strip():
+        print('Test 3 failed:')
+        print('Actual:')
+        print(repr(actual3))
+        print('Expected:')
+        print(repr(expected3.strip()))
+    assert actual3 == expected3.strip()
 
     print("All tests passed.")
 

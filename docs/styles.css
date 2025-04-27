@@ -13,6 +13,22 @@
     --body-font: 'Space Grotesk', sans-serif;
 }
 
+body, html {
+    font-family: var(--body-font);
+    font-size: 1.1rem;
+    background: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+p, li, span, div, section, main {
+    color: var(--text-color);
+}
+
 /* Canvas and Background Effects */
 #cosmic-canvas {
     position: fixed;
