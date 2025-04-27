@@ -19,6 +19,10 @@ pennylane>=0.30.0  # Quantum machine learning
 neurodiffeq>=0.2.2  # Neural network solvers for differential equations
 stochastic>=0.6.0  # Stochastic process simulation
 
+# Testing and browser automation
+delenium>=4.10.0
+webdriver-manager>=4.0.0
+
 # Fractional calculus packages
 git+https://github.com/zknus/torchfde.git  # Fractional differential equations with PyTorch
 git+https://github.com/prmiles/pyfod.git  # Python Fractional Order Derivatives
