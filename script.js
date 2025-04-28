@@ -1,4 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Load podcasts and populate podcast-list sections
+    fetch('_podcasts.json')
+        .then(response => response.json())
+        .then(podcasts => {
+            // Map of section id to podcast-list element
+            const sectionIds = ['framework', 'principles', 'theorems', 'applications', 'structure'];
+            sectionIds.forEach(sectionId => {
+                const section = document.getElementById(sectionId);
+                if (!section) return;
+                const podcastList = section.querySelector('.podcast-list');
+                if (!podcastList) return;
+                // Filter podcasts for this section
+                const relevant = podcasts.filter(p => p.section === sectionId);
+                podcastList.innerHTML = '';
+                relevant.forEach(podcast => {
+                    const item = document.createElement('div');
+                    item.className = 'podcast-item';
+                    item.innerHTML = `
+                        <h3>${podcast.title}</h3>
+                        <audio controls preload="none">
+                            <source src="${podcast.src}" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <div>
+                            <a href="${podcast.src}" download class="podcast-download">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                    `;
+                    podcastList.appendChild(item);
+                });
+            });
+        });
     // Initialize Three.js cosmic canvas
     initCosmicCanvas();
     
