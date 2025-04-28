@@ -41,6 +41,17 @@ class TestAllLinks(unittest.TestCase):
             self.driver.close()
             self.driver.switch_to.window(self.driver.window_handles[0])
 
+    def is_top_in_viewport(self, element, offset=100):
+        # Checks if the top of the element is visible in the viewport, allowing for a sticky header of 'offset' px
+        return self.driver.execute_script('''
+            var elem = arguments[0], offset = arguments[1];
+            var rect = elem.getBoundingClientRect();
+            return (
+                rect.top >= offset &&
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight)
+            );
+        ''', element, offset)
+
     def test_section_anchors(self):
         self.driver.get(LOCAL_DOCS_URL)
         anchor_links = self.driver.find_elements(By.CSS_SELECTOR, '.nav-links a[href^="#"]')
@@ -59,7 +70,8 @@ class TestAllLinks(unittest.TestCase):
             time.sleep(0.5)
             # Check if the target section is now at the top of the viewport
             target_elem = self.driver.find_element(By.ID, target_id)
-            self.assertTrue(target_elem.is_displayed())
+            self.assertTrue(target_elem.is_displayed(), f"Element #{target_id} is not displayed")
+            self.assertTrue(self.is_top_in_viewport(target_elem), f"Element #{target_id} top is not visible in viewport")
 
 if __name__ == '__main__':
     unittest.main()
