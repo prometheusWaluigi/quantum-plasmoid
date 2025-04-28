@@ -202,6 +202,62 @@ p, li, span, div, section, main {
 }
 
 /* Navigation */
+.dropdown {
+    position: relative;
+}
+.dropdown > .nav-link {
+    cursor: pointer;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(10, 10, 30, 0.98);
+    min-width: 220px;
+    box-shadow: 0 8px 24px rgba(34, 209, 238, 0.12);
+    border-radius: 0 0 8px 8px;
+    z-index: 200;
+    padding: 0.5rem 0;
+    transition: opacity 0.2s;
+}
+.dropdown:hover > .dropdown-menu,
+.dropdown:focus-within > .dropdown-menu {
+    display: block;
+    opacity: 1;
+}
+.dropdown-menu li {
+    list-style: none;
+}
+.dropdown-menu a {
+    display: block;
+    padding: 0.85rem 1.4rem;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.2s, color 0.2s;
+}
+.dropdown-menu a:hover,
+.dropdown-menu a:focus {
+    background: var(--secondary-color);
+    color: #fff;
+}
+.dropdown > .nav-link .fa-caret-down {
+    margin-left: 0.35em;
+    transition: transform 0.2s;
+}
+.dropdown:hover > .nav-link .fa-caret-down,
+.dropdown:focus-within > .nav-link .fa-caret-down {
+    transform: rotate(180deg);
+}
+@media (max-width: 900px) {
+    .dropdown-menu {
+        position: static;
+        min-width: unset;
+        box-shadow: none;
+        background: rgba(10, 10, 30, 0.98);
+    }
+}
 .nav-container {
     background-color: rgba(10, 10, 30, 0.8);
     backdrop-filter: blur(10px);

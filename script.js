@@ -237,6 +237,17 @@ function setupTheoremCarousel() {
 
 // Setup interactive repository structure map
 function setupStructureMap() {
+    const detailLinks = document.querySelectorAll('.structure-detail .detail-link');
+    detailLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Allow default navigation for local HTML pages
+            if (this.getAttribute('href').endsWith('index.html')) {
+                // For local navigation, use window.location
+                e.preventDefault();
+                window.location = this.getAttribute('href');
+            }
+        });
+    });
     const branchNodes = document.querySelectorAll('.branch-node');
     const structureDetails = document.querySelectorAll('.structure-detail');
     
