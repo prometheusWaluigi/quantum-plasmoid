@@ -1,0 +1,16 @@
+{
+  "name": "quantum-plasmoid",
+  "version": "1.0.0",
+  "description": "Documentation and visualization for the Quantum-Plasmoid Framework.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx serve docs",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": ["quantum", "plasmoid", "framework", "docs", "consciousness"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}
