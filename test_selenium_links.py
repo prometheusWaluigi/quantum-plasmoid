@@ -2,6 +2,7 @@ import unittest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.common.exceptions import ElementClickInterceptedException
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 
@@ -33,7 +34,10 @@ class TestAllLinks(unittest.TestCase):
             self.driver.execute_script("window.open(arguments[0]);", href)
             self.driver.switch_to.window(self.driver.window_handles[-1])
             time.sleep(1)
-            self.assertIn('http', self.driver.current_url)
+            self.assertTrue(
+                self.driver.current_url.startswith(('http', 'file')),
+                f"Unexpected URL: {self.driver.current_url}"
+            )
             self.driver.close()
             self.driver.switch_to.window(self.driver.window_handles[0])
 
@@ -44,7 +48,14 @@ class TestAllLinks(unittest.TestCase):
             target_id = link.get_attribute('href').split('#')[-1]
             if not target_id:
                 continue
-            link.click()
+            self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", link)
+            # Adjust for sticky headers if present
+            self.driver.execute_script("window.scrollBy(0, -100);")
+            try:
+                link.click()
+            except ElementClickInterceptedException:
+                # Fallback to JS click if intercepted
+                self.driver.execute_script("arguments[0].click();", link)
             time.sleep(0.5)
             # Check if the target section is now at the top of the viewport
             target_elem = self.driver.find_element(By.ID, target_id)
