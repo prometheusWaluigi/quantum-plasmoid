@@ -5,12 +5,21 @@
   "main": "index.js",
   "scripts": {
     "start": "npx serve docs",
-    "test": "echo \"No tests specified\" && exit 0"
+    "test": "echo \"No tests specified\" && exit 0",
+    "clean": "rimraf dist",
+    "build:docs": "cpx \"docs/**/*\" dist",
+    "build": "npm-run-all clean build:docs",
+    "predeploy": "npm run build",
+    "deploy": "cpx \"dist/**/*\" docs"
   },
   "keywords": ["quantum", "plasmoid", "framework", "docs", "consciousness"],
   "author": "",
   "license": "MIT",
+  "homepage": "https://<your-username>.github.io/quantum-plasmoid/", 
   "devDependencies": {
-    "serve": "^14.2.0"
+    "serve": "^14.2.0",
+    "rimraf": "^5.0.5",
+    "cpx": "^1.5.0",
+    "npm-run-all": "^4.1.5"
   }
 }
