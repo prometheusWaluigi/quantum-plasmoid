@@ -48,7 +48,16 @@ jobs:
           cp -r dist/* docs/
           cp dist/.nojekyll docs/.nojekyll
 
+      # List docs/ contents for debugging
+      - name: List docs/ contents
+        run: |
+          echo "Contents of docs/:"
+          ls -l docs/
+
+      # Commit and push docs/ using GITHUB_TOKEN
       - name: Commit and push docs/
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
