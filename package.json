@@ -9,6 +9,7 @@
     "clean": "rimraf dist",
     "build:docs": "cpx \"docs/**/*\" dist",
     "build": "npm-run-all clean build:docs",
+    "postbuild": "node -e \"require('fs').writeFileSync('dist/.nojekyll', '')\"", 
     "predeploy": "npm run build",
     "deploy": "cpx \"dist/**/*\" docs"
   },
