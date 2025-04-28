@@ -1,18 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Load podcasts and populate podcast-list sections
     fetch('_podcasts.json')
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) throw new Error('Failed to load _podcasts.json');
+            return response.json();
+        })
         .then(podcasts => {
-            // Map of section id to podcast-list element
+            if (!Array.isArray(podcasts)) throw new Error('Podcast data is not an array');
             const sectionIds = ['framework', 'principles', 'theorems', 'applications', 'structure'];
+            let total = 0;
             sectionIds.forEach(sectionId => {
                 const section = document.getElementById(sectionId);
                 if (!section) return;
                 const podcastList = section.querySelector('.podcast-list');
                 if (!podcastList) return;
+                // Clear any existing content
+                podcastList.innerHTML = '';
                 // Filter podcasts for this section
                 const relevant = podcasts.filter(p => p.section === sectionId);
-                podcastList.innerHTML = '';
+                total += relevant.length;
                 relevant.forEach(podcast => {
                     const item = document.createElement('div');
                     item.className = 'podcast-item';
@@ -30,8 +36,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     `;
                     podcastList.appendChild(item);
                 });
+                console.log(`Loaded ${relevant.length} podcasts for section: ${sectionId}`);
+            });
+            console.log(`Total podcasts loaded: ${total}`);
+        })
+        .catch(err => {
+            console.error('Error loading podcasts:', err);
+            const podcastLists = document.querySelectorAll('.podcast-list');
+            podcastLists.forEach(list => {
+                list.innerHTML = '<div class="podcast-error">Unable to load podcasts at this time.</div>';
             });
         });
+
     // Initialize Three.js cosmic canvas
     initCosmicCanvas();
     
