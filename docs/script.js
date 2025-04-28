@@ -7,38 +7,27 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(podcasts => {
             if (!Array.isArray(podcasts)) throw new Error('Podcast data is not an array');
-            const sectionIds = ['framework', 'principles', 'theorems', 'applications', 'structure'];
-            let total = 0;
-            sectionIds.forEach(sectionId => {
-                const section = document.getElementById(sectionId);
-                if (!section) return;
-                const podcastList = section.querySelector('.podcast-list');
-                if (!podcastList) return;
-                // Clear any existing content
-                podcastList.innerHTML = '';
-                // Filter podcasts for this section
-                const relevant = podcasts.filter(p => p.section === sectionId);
-                total += relevant.length;
-                relevant.forEach(podcast => {
-                    const item = document.createElement('div');
-                    item.className = 'podcast-item';
-                    item.innerHTML = `
-                        <h3>${podcast.title}</h3>
-                        <audio controls preload="none">
-                            <source src="${podcast.src}" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                        <div>
-                            <a href="${podcast.src}" download class="podcast-download">
-                                <i class="fas fa-download"></i> Download
-                            </a>
-                        </div>
-                    `;
-                    podcastList.appendChild(item);
-                });
-                console.log(`Loaded ${relevant.length} podcasts for section: ${sectionId}`);
+            const podcastList = document.querySelector('#podcasts .podcast-list');
+            if (!podcastList) return;
+            podcastList.innerHTML = '';
+            podcasts.forEach(podcast => {
+                const item = document.createElement('div');
+                item.className = 'podcast-item';
+                item.innerHTML = `
+                    <h3>${podcast.title}</h3>
+                    <audio controls preload="none">
+                        <source src="${podcast.src}" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <div>
+                        <a href="${podcast.src}" download class="podcast-download">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                `;
+                podcastList.appendChild(item);
             });
-            console.log(`Total podcasts loaded: ${total}`);
+            console.log(`Loaded ${podcasts.length} podcasts into #podcasts .podcast-list`);
         })
         .catch(err => {
             console.error('Error loading podcasts:', err);
