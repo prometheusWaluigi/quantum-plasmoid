@@ -12,3 +12,11 @@ A formal whitepaper expanding on the meta-theory of recursion, presenting a rigo
 
 ### [recursive_lattice_network.md](./recursive_lattice_network.md)
 Presents a comprehensive framework unifying consciousness, computation, and physical reality through a recursive lattice network that operates across mathematical, computational, physical, cognitive, and social dimensions. This document proposes a multi-dimensional lattice model that connects different levels of reality through recursive information flows.
+
+---
+
+## Podcasts
+
+- [Recursive Systems: Foundations and Applications (MP3)](./Recursive%20Systems_%20Foundations%20and%20Applications.mp3)
+
+*Note: GitHub Markdown does not support embedded audio. Please download and play this file locally.*

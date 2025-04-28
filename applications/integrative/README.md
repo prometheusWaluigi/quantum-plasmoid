@@ -15,3 +15,11 @@ Proposes a quantum-informed approach to astrology, suggesting that planetary con
 
 ### [publicationMythopoeticManifesto.md](./publicationMythopoeticManifesto.md)
 A comprehensive guide to potential publication venues for integrative and speculative consciousness research, providing strategies for transforming mythopoetic manifestos into rigorous academic papers. This document offers practical guidance for researchers seeking to publish interdisciplinary work on consciousness.
+
+---
+
+## Podcasts
+
+- [Prime Recursion Protocol: Formats for Embodiment (MP3)](./Prime%20Recursion%20Protocol_%20Formats%20for%20Embodiment.mp3)
+
+*Note: GitHub Markdown does not support embedded audio. Please download and play this file locally.*

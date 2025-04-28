@@ -27,3 +27,11 @@ A mathematical framework exploring consciousness through a novel quantum operato
 
 ### [ORCHARD vs Recursive Eigenmode vs Plasma.md](./ORCHARD vs Recursive Eigenmode vs Plasma.md)
 A comparative analysis of three major theoretical approaches within the Quantum-Plasmoid framework, examining their similarities, differences, and potential integration points. This document explores how these models might complement each other.
+
+---
+
+## Podcasts
+
+- [The ORCHARD Theorem: A Computational Framework for Consciousness (MP3)](./The%20ORCHARD%20Theorem_%20A%20Computational%20Framework%20for%20Consciousness.mp3)
+
+*Note: GitHub Markdown does not support embedded audio. Please download and play this file locally.*

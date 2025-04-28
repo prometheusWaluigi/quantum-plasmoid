@@ -12,3 +12,11 @@ A radical framework proposing consciousness as a recursive, coherence-seeking pr
 
 ### [CAP and Fractal Time.md](./CAP and Fractal Time.md)
 An examination of how the CAP (Consistency, Availability, Partition-tolerance) theorem applies to temporal processing in conscious systems. This document explores the trade-offs between consistent temporal experience, availability of temporal information, and robustness to temporal partitioning.
+
+---
+
+## Podcasts
+
+- [Fractal Time and Consciousness Models (MP3)](./Fractal%20Time%20and%20Consciousness%20Models.mp3)
+
+*Note: GitHub Markdown does not support embedded audio. Please download and play this file locally.*

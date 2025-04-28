@@ -12,3 +12,11 @@ A deep exploration of fractal and recursive structures in cognition, biology, an
 
 ### [FRACTAL.md](./FRACTAL.md)
 Core definitions and axioms of the fractal framework, providing foundational concepts that underpin the more specialized applications. Presents fundamental principles of self-similarity, recursive generation, and scale-invariant dynamics as they apply to information processing systems.
+
+---
+
+## Podcasts
+
+- [Fractal Systems: Consciousness and Complex Hierarchies (MP3)](./Fractal%20Systems_%20Consciousness%20and%20Complex%20Hierarchies.mp3)
+
+*Note: GitHub Markdown does not support embedded audio. Please download and play this file locally.*

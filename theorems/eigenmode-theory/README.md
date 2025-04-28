@@ -15,3 +15,11 @@ Presents a revolutionary theorem proposing that conscious states can be mapped t
 
 ### [Quantum Spectral Fractal Weaving Multi Scale Eigenmode.md](./Quantum Spectral Fractal Weaving Multi Scale Eigenmode.md)
 An expanded exploration of how quantum effects might influence neural eigenmodes across multiple scales, creating a unified quantum-neural framework for consciousness. This document bridges quantum and neural levels through spectral dynamics and fractal weaving processes.
+
+---
+
+## Podcasts
+
+- [Eigenmode Theory of Consciousness (MP3)](./Eigenmode%20Theory%20of%20Consciousness.mp3)
+
+*Note: GitHub Markdown does not support embedded audio. Please download and play this file locally.*

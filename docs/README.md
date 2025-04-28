@@ -22,3 +22,11 @@ A comprehensive vision for developing the Quantum-Plasmoid framework, including:
 - Experimental validation approaches
 - Interdisciplinary collaboration opportunities
 - Timeline for major theoretical milestones
+
+---
+
+## Podcasts
+
+See the [main repository Podcasts section](../README.md#podcasts) for the full list of Quantum-Plasmoid podcasts and direct download links.
+
+*Note: GitHub Markdown does not support embedded audio. Please download and play these files locally.*

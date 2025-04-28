@@ -9,3 +9,11 @@ A novel protocol applying recursive fractal principles to health optimization, w
 
 ### [EBVReactivationMECFS.md](./EBVReactivationMECFS.md)
 An application of the Quantum-Plasmoid framework to understanding Epstein-Barr virus reactivation and its relationship to ME/CFS (Myalgic Encephalomyelitis/Chronic Fatigue Syndrome). This document explores how recursive immune dynamics and viral-host interactions might be modeled through fractal frameworks.
+
+---
+
+## Podcasts
+
+- [Recursive Fractals in Health Optimization (MP3)](./Recursive%20Fractals%20in%20Health%20Optimization.mp3)
+
+*Note: GitHub Markdown does not support embedded audio. Please download and play this file locally.*

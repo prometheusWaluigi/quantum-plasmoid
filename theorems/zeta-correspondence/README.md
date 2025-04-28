@@ -9,3 +9,11 @@ A groundbreaking theorem proposing a formal correspondence between the Riemann z
 
 ### [Comparing ζ-Orchard Correspondence Ψζ Hypothesis.md](./Comparing ζ-Orchard Correspondence Ψζ Hypothesis.md)
 A detailed comparative analysis of the ζ-Orchard Correspondence with existing theories of consciousness, highlighting its unique contributions in linking number theory, retrocausality, and qualia emergence. This document positions the ζ-Orchard Correspondence within the broader landscape of consciousness theories.
+
+---
+
+## Podcasts
+
+- [ζ-Orchard: A Novel Theory of Consciousness (MP3)](./ζ-Orchard_%20A%20Novel%20Theory%20of%20Consciousness.mp3)
+
+*Note: GitHub Markdown does not support embedded audio. Please download and play this file locally.*

@@ -98,6 +98,38 @@ The Quantum-Plasmoid Framework offers several significant contributions:
 
 5. **Practical Applications**: Yields practical applications in computation, health, and interdisciplinary research
 
+---
+
+## Podcasts
+
+Listen to discussions and deep dives on Quantum-Plasmoid topics. Download and play the following podcasts locally:
+
+### Applications
+- [Quantum-Plasmoid Computational Applications (Computational)](./applications/computational/Quantum-Plasmoid%20Computational%20Applications.mp3)
+- [Recursive Fractals in Health Optimization (Health)](./applications/health/Recursive%20Fractals%20in%20Health%20Optimization.mp3)
+- [Prime Recursion Protocol: Formats for Embodiment (Integrative)](./applications/integrative/Prime%20Recursion%20Protocol_%20Formats%20for%20Embodiment.mp3)
+
+### Core Concepts
+- [Models of Consciousness: Function, Semantics, and Dynamics (Consciousness)](./core-concepts/consciousness/Models%20of%20Consciousness_%20Function,%20Semantics,%20and%20Dynamics.mp3)
+- [Fractal Systems: Consciousness and Complex Hierarchies (Fractal Systems)](./core-concepts/fractal-systems/Fractal%20Systems_%20Consciousness%20and%20Complex%20Hierarchies.mp3)
+- [Quantum Fractals, Spectra, and Consciousness: A Weaving (Quantum Dynamics)](./core-concepts/quantum-dynamics/Quantum%20Fractals,%20Spectra,%20and%20Consciousness_%20A%20Weaving.mp3)
+- [Recursive Systems: Foundations and Applications (Recursive Systems)](./core-concepts/recursive-systems/Recursive%20Systems_%20Foundations%20and%20Applications.mp3)
+
+### Theorems
+- [Eigenmode Theory of Consciousness](./theorems/eigenmode-theory/Eigenmode%20Theory%20of%20Consciousness.mp3)
+- [The ORCHARD Theorem: A Computational Framework for Consciousness](./theorems/orchard-theorem/The%20ORCHARD%20Theorem_%20A%20Computational%20Framework%20for%20Consciousness.mp3)
+- [ζ-Orchard: A Novel Theory of Consciousness](./theorems/zeta-correspondence/ζ-Orchard_%20A%20Novel%20Theory%20of%20Consciousness.mp3)
+
+### Time Models
+- [Fractal Time and Consciousness Models](./time-models/Fractal%20Time%20and%20Consciousness%20Models.mp3)
+
+### Visualizations
+- [Quantum-Plasmoid Visualizations: Eigenvalue Spectrum of Consciousness](./visualizations/Quantum-Plasmoid%20Visualizations_%20Eigenvalue%20Spectrum%20of%20Consciousness.mp3)
+
+*Note: GitHub Markdown does not support embedded audio. Please download and play these files locally.*
+
+---
+
 ## Contributing
 
 This repository represents an evolving body of work exploring frontier concepts at the intersection of multiple disciplines. Contributions, critiques, and extensions are welcome through pull requests and issues.
