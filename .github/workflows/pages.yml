@@ -79,3 +79,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: docs
+          clean: false  # Prevent cleaning of existing files
+          force: true  # Force deployment to overwrite existing files
