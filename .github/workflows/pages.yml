@@ -47,6 +47,16 @@ jobs:
           mkdir docs
           cp -r dist/* docs/
           cp dist/.nojekyll docs/.nojekyll
+          # Verify CSS file size
+          if [ ! -f docs/styles.css ]; then
+            echo "🚨 CSS file not found in docs/"
+            exit 1
+          fi
+          size=$(stat -c%s "docs/styles.css")
+          if [ "$size" -lt 20000 ]; then
+            echo "🚨 CSS file size is too small: $size bytes"
+            exit 1
+          fi
 
       # List docs/ contents for debugging
       - name: List docs/ contents
