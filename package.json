@@ -7,7 +7,7 @@
     "start": "npx serve docs",
     "test": "echo \"No tests specified\" && exit 0",
     "clean": "rimraf dist",
-    "build:docs": "cpx \"docs/**/*\" dist",
+    "build:docs": "cpx \"docs/**/*\" dist && cpx \"docs/styles.css\" docs",
     "build": "npm-run-all clean build:docs",
     "postbuild": "node -e \"require('fs').writeFileSync('dist/.nojekyll', '')\"", 
     "predeploy": "npm run build",
