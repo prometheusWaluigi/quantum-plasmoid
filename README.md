@@ -1,3 +1,16 @@
+> # 🧪 VIBE CODE — read this first
+>
+> This repository is **vibe code** from the **Sharan homelab** — built fast, in play, by [Ketan Sharan Raturi](https://github.com/prometheusWaluigi) together with his AI agents. It may be brilliant, broken, or (most likely) both at once. Nothing here is production software; everything here is an artifact of curiosity.
+>
+> **Looking for the maintained work?** The living, curated projects live in the Sharan family:
+> 📚 [**catalog**](https://github.com/prometheusWaluigi/catalog) — every public repo, grouped & labeled ·
+> 🛠️ [**sharan-skills**](https://github.com/prometheusWaluigi/sharan-skills) — the lab's agent skills ·
+> 🎛️ [**arc-a770-strata**](https://github.com/prometheusWaluigi/arc-a770-strata) — real models on an Intel Arc A770
+>
+> **Check there for updates.** This repo is a snapshot of a moment, not a living project.
+>
+> **This repo:** the Quantum-Plasmoid Framework's documentation + podcast portal — recursive/fractal models of consciousness and complex systems: eigenmode theory, the ORCHARD theorem, the ζ-Orchard correspondence, fractal time models, each with docs and a podcast episode, deployed to GitHub Pages. **Status:** documentation site · runs locally with `npm ci && npm start`; auto-deploys to Pages on push to `main`. Reorganized April 2025.
+
 # 🚀 Quantum-Plasmoid Framework
 
 [![Deploy GitHub Pages](https://github.com/<your-username>/quantum-plasmoid/actions/workflows/pages.yml/badge.svg)](https://github.com/<your-username>/quantum-plasmoid/actions/workflows/pages.yml)
@@ -176,3 +189,6 @@ This repository represents an evolving body of work exploring frontier concepts 
 ## Repository History
 
 This repository was reorganized on April 22, 2025, to better reflect the conceptual relationships between different aspects of the Quantum-Plasmoid framework. The original unifiedTheories folder has been replaced with a more structured hierarchy that better captures thematic and conceptual connections.
+---
+
+*Part of the [Sharan lab public catalog](https://github.com/prometheusWaluigi/catalog) · vibe code from the homelab — brilliant, broken, or both (see the banner up top).*
