@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.common.exceptions import ElementClickInterceptedException
+from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 
@@ -70,8 +71,10 @@ class TestAllLinks(unittest.TestCase):
             time.sleep(0.5)
             # Check if the target section is now at the top of the viewport
             target_elem = self.driver.find_element(By.ID, target_id)
-            self.assertTrue(target_elem.is_displayed(), f"Element #{target_id} is not displayed")
-            self.assertTrue(self.is_top_in_viewport(target_elem), f"Element #{target_id} top is not visible in viewport")
+            WebDriverWait(self.driver, 5).until(
+                lambda _: target_elem.is_displayed() and self.is_top_in_viewport(target_elem),
+                f"Element #{target_id} did not scroll into view",
+            )
 
 if __name__ == '__main__':
     unittest.main()
