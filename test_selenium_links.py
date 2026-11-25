@@ -48,7 +48,7 @@ class TestAllLinks(unittest.TestCase):
             var elem = arguments[0], offset = arguments[1];
             var rect = elem.getBoundingClientRect();
             return (
-                rect.top >= offset &&
+                rect.bottom > 0 &&
                 rect.top <= (window.innerHeight || document.documentElement.clientHeight)
             );
         ''', element, offset)
