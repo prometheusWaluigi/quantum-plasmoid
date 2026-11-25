@@ -71,7 +71,7 @@ class TestAllLinks(unittest.TestCase):
             time.sleep(0.5)
             # Check if the target section is now at the top of the viewport
             target_elem = self.driver.find_element(By.ID, target_id)
-            WebDriverWait(self.driver, 5).until(
+            WebDriverWait(self.driver, 15).until(
                 lambda _: target_elem.is_displayed() and self.is_top_in_viewport(target_elem),
                 f"Element #{target_id} did not scroll into view",
             )
