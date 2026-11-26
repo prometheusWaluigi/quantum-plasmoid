@@ -55,6 +55,16 @@ class TestAllLinks(unittest.TestCase):
 
     def test_section_anchors(self):
         self.driver.get(LOCAL_DOCS_URL)
+        # Smooth-scroll animation timing varies substantially across headless browsers;
+        # disable it here so the test validates the anchor target rather than animation speed.
+        self.driver.execute_script("""
+            document.documentElement.style.scrollBehavior = 'auto';
+            const nativeScrollTo = window.scrollTo.bind(window);
+            window.scrollTo = (options) => {
+                if (typeof options === 'object') options = { ...options, behavior: 'auto' };
+                return nativeScrollTo(options);
+            };
+        """)
         anchor_links = self.driver.find_elements(By.CSS_SELECTOR, '.nav-links a[href^="#"]')
         for link in anchor_links:
             target_id = link.get_attribute('href').split('#')[-1]
